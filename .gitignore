@@ -1,0 +1,22 @@
+# Node
+node_modules/
+.next/
+out/
+pnpm-lock.yaml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+*.egg-info/
+.mypy_cache/
+
+# Data
+data/logs/*
+data/fields/*
+*.parquet
+*.zarr
+
+# Misc
+.DS_Store

@@ -1,0 +1,11 @@
+{
+  "name": "fleet-8",
+  "fleet": {
+    "N": 8,
+    "groups": [
+      "ground"
+    ]
+  },
+  "seed": 0,
+  "sensors_id": "sensors_fleet8"
+}

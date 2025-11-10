@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+.bg-gray-50 { background: #f9fafb; }
+.text-gray-900 { color: #111827; }
+.bg-white { background: #fff; }
+.border { border: 1px solid #e5e7eb; }
+.border-b { border-bottom: 1px solid #e5e7eb; }
+.rounded-xl { border-radius: 0.75rem; }
+.sticky { position: sticky; }
+.top-0 { top: 0; }
+.z-10 { z-index: 10; }
+.backdrop-blur { backdrop-filter: saturate(180%) blur(6px); }
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-2 { gap: 0.5rem; }
+.text-sm { font-size: 0.875rem; }
+.text-xl { font-size: 1.25rem; }
+.font-semibold { font-weight: 600; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }

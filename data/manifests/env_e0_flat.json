@@ -1,0 +1,14 @@
+{
+  "name": "E0-flat",
+  "grid": {
+    "H": 60,
+    "W": 80,
+    "cell_m": 250
+  },
+  "wind": {
+    "speed": 4,
+    "dir_deg": 210
+  },
+  "seed": 0,
+  "env_id": "env_e0_flat"
+}

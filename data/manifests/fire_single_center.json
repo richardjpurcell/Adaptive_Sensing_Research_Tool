@@ -1,0 +1,12 @@
+{
+  "name": "single-center",
+  "ignitions": {
+    "k": 1,
+    "placement": "center"
+  },
+  "model": {
+    "family": "baseline"
+  },
+  "seed": 0,
+  "fire_id": "fire_single_center"
+}
