@@ -1,0 +1,16 @@
+{
+  "fire_id": "fire-cbfc833f48-0aa922",
+  "env_id": "env-b729e0743c-7048bd",
+  "ignitions": {
+    "type": "point",
+    "locations": [
+      {
+        "row": 32,
+        "col": 48
+      }
+    ],
+    "t0": 0
+  },
+  "model": "E2_base",
+  "seed": 0
+}

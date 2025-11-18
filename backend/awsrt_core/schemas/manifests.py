@@ -1,36 +1,38 @@
-from pydantic import BaseModel, Field
-from typing import Optional, List, Literal, Dict
+from __future__ import annotations
+from pydantic import BaseModel, Field, PositiveInt, model_validator
+from typing import Optional, List, Literal
 
-class Grid(BaseModel):
-    H: int
-    W: int
-    cell_m: int
+class GridSpec(BaseModel):
+    H: PositiveInt
+    W: PositiveInt
+    cell_size: float = Field(..., gt=0.0, description="meters")
+    crs_code: str = "EPSG:32612"
 
 class EnvironmentManifest(BaseModel):
-    name: str
-    grid: Grid
-    wind: Dict[str, float] = Field(default_factory=dict)
+    env_id: str
+    grid: GridSpec
     seed: int = 0
-    env_id: Optional[str]
+    terrain_elev_path: Optional[str] = None
+    feasibility_mask_path: Optional[str] = None
+
+class IgnitionCell(BaseModel):
+    row: int
+    col: int
+
+class IgnitionSpec(BaseModel):
+    type: Literal["point"] = "point"
+    locations: List[IgnitionCell]
+    t0: int = 0
+
+    @model_validator(mode="after")
+    def non_empty(self):
+        if not self.locations:
+            raise ValueError("Ignitions must contain at least one location.")
+        return self
 
 class FireManifest(BaseModel):
-    name: str
-    ignitions: Dict[str, object] = Field(default_factory=dict)
-    model: Dict[str, object] = Field(default_factory=dict)
+    fire_id: str
+    env_id: str
+    ignitions: IgnitionSpec
+    model: str = "E2_base"
     seed: int = 0
-    fire_id: Optional[str]
-
-class SensorsManifest(BaseModel):
-    name: str
-    fleet: Dict[str, object] = Field(default_factory=dict)
-    seed: int = 0
-    sensors_id: Optional[str]
-
-class RunConfig(BaseModel):
-    policy: Literal["greedy","uncertainty","thompson","rl"] = "thompson"
-    budget: Dict[str, object] = Field(default_factory=dict)
-    impairments: Dict[str, float] = Field(default_factory=lambda: {"epsilon":0.0,"rho":0.0,"tau":0.0})
-    alignment: Literal["calibration","registration_ops"] = "calibration"
-    steps: int = 100
-    seed: int = 0
-    run_id: Optional[str]

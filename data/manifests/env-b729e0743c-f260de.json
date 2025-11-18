@@ -1,0 +1,12 @@
+{
+  "env_id": "env-b729e0743c-f260de",
+  "grid": {
+    "H": 64,
+    "W": 96,
+    "cell_size": 250.0,
+    "crs_code": "EPSG:32612"
+  },
+  "seed": 0,
+  "terrain_elev_path": null,
+  "feasibility_mask_path": null
+}

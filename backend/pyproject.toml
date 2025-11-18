@@ -5,7 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
   "fastapi",
   "uvicorn[standard]",
-  "pydantic",
+  "pydantic>=2",
   "numpy",
   "pandas",
   "pyarrow",
@@ -16,6 +16,9 @@ dependencies = [
   "python-multipart",
   "rich",
   "typer",
+  "numcodecs",
+  "matplotlib",
+  "pillow",
 ]
 
 [tool.uvicorn]
